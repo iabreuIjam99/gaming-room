@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom animations and styles */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Orbitron', monospace;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    color: #00ff41;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .arcade-button {
+    @apply bg-gradient-to-b from-arcade-gray to-arcade-black border-2 border-neon-green
+           font-arcade font-bold px-6 py-3 rounded-lg
+           hover:border-neon-blue hover:text-neon-blue hover:shadow-lg hover:shadow-neon-blue/50
+           active:scale-95 transition-all duration-200
+           animate-neon-pulse cursor-pointer select-none;
+  }
+  
+  .game-board {
+    @apply bg-arcade-black border-4 border-neon-green rounded-xl
+           shadow-2xl shadow-neon-green/30 backdrop-blur-sm;
+  }
+  
+  .neon-text {
+    @apply text-neon-green animate-neon-pulse;
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+  
+  .pixel-text {
+    @apply font-pixel text-xs tracking-wider;
+  }
+  
+  .arcade-card {
+    @apply bg-gradient-to-br from-arcade-gray/80 to-arcade-black/80
+           border border-neon-green/50 rounded-xl p-6
+           hover:border-neon-blue hover:shadow-xl hover:shadow-neon-blue/20
+           transition-all duration-300 backdrop-blur-sm;
+  }
+  
+  .game-pixel {
+    @apply w-4 h-4 border border-gray-800;
+  }
+  
+  .score-display {
+    @apply bg-arcade-black border-2 border-neon-yellow
+           px-4 py-2 rounded-lg font-pixel text-neon-yellow
+           shadow-lg shadow-neon-yellow/30;
+  }
+}
+
+@layer utilities {
+  .text-shadow-neon {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 15px currentColor;
+  }
+  
+  .glow-effect {
+    box-shadow: 0 0 20px currentColor, inset 0 0 20px rgba(255,255,255,0.1);
+  }
+  
+  .scanline-effect {
+    background-image: 
+      linear-gradient(
+        90deg,
+        transparent 50%,
+        rgba(0, 255, 65, 0.03) 50%
+      );
+    background-size: 4px 4px;
+  }
+  
+  .crt-effect {
+    position: relative;
+  }
+  
+  .crt-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 255, 65, 0.03) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+  }
+}
+
+/* Responsive breakpoints for games */
+@media (max-width: 640px) {
+  .game-board {
+    @apply mx-2;
+  }
+  
+  .arcade-button {
+    @apply px-4 py-2 text-sm;
+  }
+}
+
+/* Custom focus styles for better accessibility */
+@layer utilities {
+  .focus-neon:focus {
+    @apply outline-none ring-2 ring-neon-blue ring-opacity-50;
+  }
+}

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <linearGradient id="gamepadGradientSmall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00ff41;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#00ffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ff00ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="16" height="16" fill="#0a0a0a" rx="2"/>
+  
+  <!-- Gamepad Body -->
+  <path d="M3 6 C3 5, 4 4, 5 4 L11 4 C12 4, 13 5, 13 6 L13 8 C13 9, 12 10, 11 10 L5 10 C4 10, 3 9, 3 8 Z" 
+        fill="url(#gamepadGradientSmall)" 
+        opacity="0.9"/>
+  
+  <!-- D-Pad -->
+  <rect x="4.5" y="6.5" width="1.5" height="0.5" fill="#0a0a0a" rx="0.2"/>
+  <rect x="5" y="6" width="0.5" height="1.5" fill="#0a0a0a" rx="0.2"/>
+  
+  <!-- Action Buttons -->
+  <circle cx="9.5" cy="6" r="0.4" fill="#0a0a0a"/>
+  <circle cx="10.5" cy="7" r="0.4" fill="#0a0a0a"/>
+  <circle cx="8.5" cy="7" r="0.4" fill="#0a0a0a"/>
+  <circle cx="9.5" cy="8" r="0.4" fill="#0a0a0a"/>
+  
+  <!-- Neon glow border -->
+  <rect x="0.5" y="0.5" width="15" height="15" fill="none" stroke="url(#gamepadGradientSmall)" stroke-width="0.3" rx="1.5" opacity="0.7"/>
+</svg>

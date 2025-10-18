@@ -12,6 +12,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "preview": "vite preview",
+    "deploy": "npm run build && gh-pages -d dist",
     "test": "vitest",
     "test:ui": "vitest --ui",
     "test:run": "vitest run",

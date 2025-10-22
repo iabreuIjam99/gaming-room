@@ -7,6 +7,8 @@ const GameMenu = () => {
   const [selectedGame, setSelectedGame] = useState(0);
   const [isFlashing, setIsFlashing] = useState(false);
 
+  console.log('GameMenu component loaded');
+
   // Game data with arcade styling
   const games = [
     {
@@ -89,12 +91,14 @@ const GameMenu = () => {
   }, [selectedGame, games]);
 
   const handleGameSelect = (game) => {
+    console.log('Game selected:', game);
     if (game.status === 'COMING SOON') {
       // Flash effect for coming soon games
       setIsFlashing(true);
       setTimeout(() => setIsFlashing(false), 1000);
       return;
     }
+    console.log('Navigating to:', game.route);
     navigate(game.route);
   };
 

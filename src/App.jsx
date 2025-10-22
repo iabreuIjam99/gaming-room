@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import GameMenu from './components/GameMenu';
+import GameMenuSimple from './components/GameMenuSimple';
 import Snake from './games/snake/Snake';
 import Tetris from './games/tetris/Tetris';
 import Checkers from './games/checkers/Checkers';
@@ -12,7 +12,7 @@ import './index.css';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/gaming-room">
       <div className="min-h-screen bg-gradient-to-br from-arcade-black via-arcade-gray to-arcade-black 
                       scanline-effect relative overflow-hidden">
         
@@ -34,7 +34,7 @@ function App() {
               transition={{ duration: 0.8 }}
             >
               <Routes>
-                <Route path="/" element={<GameMenu />} />
+                <Route path="/" element={<GameMenuSimple />} />
                 <Route path="/snake" element={<Snake />} />
                 <Route path="/tetris" element={<Tetris />} />
                 <Route path="/checkers" element={<Checkers />} />

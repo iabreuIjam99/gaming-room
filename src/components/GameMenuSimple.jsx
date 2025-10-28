@@ -41,7 +41,7 @@ const GameMenuSimple = () => {
       </div>
       
       <p className="mt-8 text-gray-400">
-        Click any game to play! (Snake & Tetris are fully functional)
+        Click any game to play! (Snake, Tetris & Checkers fully functional)
       </p>
     </div>
   );
